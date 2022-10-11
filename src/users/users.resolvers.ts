@@ -4,7 +4,6 @@ import bcrypt from "bcrypt";
 
 export default {
 	Mutation: {
-	
 		login: async (_, { username, password }) => {
 			const user = await client.user.findFirst({ where: { username } });
 			if (!user) {
