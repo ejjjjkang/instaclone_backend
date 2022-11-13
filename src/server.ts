@@ -3,6 +3,11 @@ import schema from "./schema";
 
 const server = new ApolloServer({
 	schema,
+	context: ({ req }) => {
+		return {
+			req,
+		};
+	},
 });
 
 server
